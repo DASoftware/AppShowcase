@@ -1,11 +1,3 @@
-//
-//  Constants.swift
-//  Showcase-app
-//
-//  Created by Aris Doxakis on 1/29/16.
-//  Copyright © 2016 DASoftware. All rights reserved.
-//
-
 import Foundation
 
 import UIKit
