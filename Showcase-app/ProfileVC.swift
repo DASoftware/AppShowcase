@@ -40,6 +40,7 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
                     if err == nil {
                         let img = UIImage(data: data!)!
                         self.userImage.image = img
+                        self.roundingUIView(self.userImage, cornerRadiusParam: 20.0)
                     }
                 })
             }
@@ -93,4 +94,10 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
             }
         }
     }
+    
+    private func roundingUIView(let aView: UIView!, let cornerRadiusParam: CGFloat!) {
+        aView.clipsToBounds = true
+        aView.layer.cornerRadius = cornerRadiusParam
+    }
+    
 }

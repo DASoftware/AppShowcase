@@ -32,6 +32,8 @@ class PostCell: UITableViewCell {
         tap.numberOfTapsRequired = 1
         likesImg.addGestureRecognizer(tap)
         likesImg.userInteractionEnabled = true
+        
+        self.roundingUIView(self.userImage, cornerRadiusParam: 150.0)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -113,4 +115,10 @@ class PostCell: UITableViewCell {
             }
         })
     }
+    
+    private func roundingUIView(let aView: UIView!, let cornerRadiusParam: CGFloat!) {
+        aView.clipsToBounds = true
+        aView.layer.cornerRadius = cornerRadiusParam
+    }
+    
 }
