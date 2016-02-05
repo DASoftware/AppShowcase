@@ -301,13 +301,13 @@
                                                                             <rect key="frame" x="918" y="0.0" width="300" height="50"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="4444" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gF2-7O-DdE">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="26"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="24"/>
                                                                                     <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
                                                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Likes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7f-pD-Q2Q">
-                                                                                    <rect key="frame" x="0.0" y="26" width="300" height="24"/>
+                                                                                    <rect key="frame" x="0.0" y="24" width="300" height="26"/>
                                                                                     <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
                                                                                     <color key="textColor" white="0.90530620809999995" alpha="1" colorSpace="calibratedWhite"/>
                                                                                     <nil key="highlightedColor"/>
@@ -317,7 +317,7 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dFG-PJ-IH3">
-                                                                    <rect key="frame" x="0.0" y="55" width="1218" height="70"/>
+                                                                    <rect key="frame" x="0.0" y="55" width="1218" height="73"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="NP7-pJ-7v7"/>
@@ -328,8 +328,8 @@
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                     <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                                                 </textView>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="screen" translatesAutoresizingMaskIntoConstraints="NO" id="Zht-7V-rXr">
-                                                                    <rect key="frame" x="0.0" y="130" width="1218" height="157"/>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="default_post_image" translatesAutoresizingMaskIntoConstraints="NO" id="Zht-7V-rXr">
+                                                                    <rect key="frame" x="0.0" y="133" width="1218" height="154"/>
                                                                 </imageView>
                                                             </subviews>
                                                             <constraints>
@@ -375,6 +375,10 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="cbp-dU-D35">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                                <color key="color" red="0.2470588235" green="0.53725490200000003" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.95973154362416102" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -382,9 +386,11 @@
                             <constraint firstItem="TVh-9C-VaP" firstAttribute="leading" secondItem="DVA-DC-VxM" secondAttribute="leadingMargin" id="Uk6-NG-taf"/>
                             <constraint firstItem="nhs-de-ISr" firstAttribute="top" secondItem="dNt-6R-wYE" secondAttribute="bottom" constant="8" id="W8Z-kv-QLZ"/>
                             <constraint firstItem="nhs-de-ISr" firstAttribute="leading" secondItem="DVA-DC-VxM" secondAttribute="leadingMargin" id="c71-nM-i0f"/>
+                            <constraint firstItem="cbp-dU-D35" firstAttribute="centerY" secondItem="DVA-DC-VxM" secondAttribute="centerY" id="cSB-gW-4fq"/>
                             <constraint firstItem="TVh-9C-VaP" firstAttribute="top" secondItem="dNt-6R-wYE" secondAttribute="bottom" id="f6d-PF-aFC"/>
                             <constraint firstItem="TVh-9C-VaP" firstAttribute="top" secondItem="nhs-de-ISr" secondAttribute="bottom" constant="8" id="lTG-yW-51x"/>
                             <constraint firstItem="nhs-de-ISr" firstAttribute="trailing" secondItem="DVA-DC-VxM" secondAttribute="trailingMargin" id="lYZ-Wm-VWK"/>
+                            <constraint firstItem="cbp-dU-D35" firstAttribute="centerX" secondItem="DVA-DC-VxM" secondAttribute="centerX" id="sbZ-Nc-Dkg"/>
                             <constraint firstItem="TVh-9C-VaP" firstAttribute="trailing" secondItem="DVA-DC-VxM" secondAttribute="trailingMargin" id="tTq-o7-IQf"/>
                         </constraints>
                         <variation key="default">
@@ -402,6 +408,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="cbp-dU-D35" id="tta-5s-wCn"/>
                         <outlet property="imageSelectorImg" destination="DQf-jM-mZS" id="YAe-C3-mVa"/>
                         <outlet property="postTextField" destination="4bS-n7-AY4" id="wfG-Zy-JTS"/>
                         <outlet property="tableView" destination="TVh-9C-VaP" id="f8Y-36-F1U"/>
@@ -555,10 +562,10 @@
     </scenes>
     <resources>
         <image name="camera" width="50" height="50"/>
+        <image name="default_post_image" width="327" height="154"/>
         <image name="default_user" width="300" height="300"/>
         <image name="facebook_login" width="204" height="204"/>
         <image name="heart-empty" width="150" height="147"/>
         <image name="logo" width="168" height="228"/>
-        <image name="screen" width="300" height="534"/>
     </resources>
 </document>

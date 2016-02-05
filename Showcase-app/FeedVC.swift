@@ -22,6 +22,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     @IBOutlet weak var postTextField: UITextField!
     @IBOutlet weak var imageSelectorImg: UIImageView!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +36,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
+        
+        activityIndicator.startAnimating()
         
         DataService.ds.REF_POSTS.observeEventType(.Value, withBlock: {snapshot in
             if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
@@ -50,6 +54,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
             }
             
             self.tableView.reloadData()
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.hidden = true
         })
     }
     
