@@ -23,5 +23,5 @@ let SEGUE_LOGGED_IN = "loggedIn"
 let STATUS_ACCOUNT_NONEXIST = -8
 
 // Image shack key
-let IMAGE_SHACK_KEY = "24ACILRU0c73e1a95b8130e8202ee5c4abf49417".dataUsingEncoding(NSUTF8StringEncoding)!
+let IMAGE_SHACK_KEY = "".dataUsingEncoding(NSUTF8StringEncoding)!
 let IMAGE_SHACK_JSON = "json".dataUsingEncoding(NSUTF8StringEncoding)!
