@@ -17,10 +17,13 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var descriptionText: UITextView!
     @IBOutlet weak var likesLbl: UILabel!
     @IBOutlet weak var likesImg: UIImageView!
+    @IBOutlet weak var usernameLbl: UILabel!
+    @IBOutlet weak var userImage: UIImageView!
     
     var post: Post!
     var request: Request?
     var likeRef: Firebase!
+    var userRef: Firebase!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,6 +49,7 @@ class PostCell: UITableViewCell {
         self.post = post
         
         likeRef = DataService.ds.REF_USER_CURRENT.childByAppendingPath("likes").childByAppendingPath(post.postKey)
+        userRef = DataService.ds.REF_USERS.childByAppendingPath(post.userId)
         
         self.descriptionText.text = post.postDescription
         self.likesLbl.text = "\(post.postLikes)"
@@ -75,6 +79,25 @@ class PostCell: UITableViewCell {
                 self.likesImg.image = UIImage(named: "heart-full")
             }
         })
+        
+        userRef.observeSingleEventOfType(.Value, withBlock: { (snapshot) -> Void in
+            if let username = snapshot.value.objectForKey("username") as? String {
+                self.usernameLbl.text = username
+            }
+        })
+        
+        userRef.observeSingleEventOfType(.Value, withBlock: { (snapshot) -> Void in
+            if let profileUrl = snapshot.value.objectForKey("profileImg") as? String {
+                Alamofire.request(.GET, profileUrl).validate(contentType: ["image/*"]).response(completionHandler: { (request, Response, data, err) -> Void in
+                    if err == nil {
+                        let img = UIImage(data: data!)!
+                        self.userImage.image = img
+                        FeedVC.imageCache.setObject(img, forKey: post.userId)
+                    }
+                })
+            }
+        })
+
     }
     
     func likeTapped(sender: UITapGestureRecognizer) {

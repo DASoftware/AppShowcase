@@ -143,7 +143,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     func postToFirebase(imgUrl: String?) {
         var post: Dictionary<String,AnyObject> = [
             "description": postTextField.text!,
-            "likes": 0
+            "likes": 0,
+            "userId": "\(NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID)!)"
         ]
         
         if imgUrl != nil {
